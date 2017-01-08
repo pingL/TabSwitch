@@ -42,7 +42,7 @@ public class MainActivity_ViewPager extends Activity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_viewpager);
         initView();
         initEvents();
     }
