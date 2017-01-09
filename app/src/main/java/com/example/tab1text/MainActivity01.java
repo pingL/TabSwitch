@@ -16,12 +16,10 @@ import java.util.List;
 
 
 /**
- *
  * ViewPage 的 Tab 切换页面的实现
- *
  */
 
-public class MainActivityViewPager extends Activity implements View.OnClickListener {
+public class MainActivity01 extends Activity implements View.OnClickListener {
 
     private ViewPager mViewPager;
     private PagerAdapter mAdapter;
@@ -42,7 +40,7 @@ public class MainActivityViewPager extends Activity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_viewpager);
+        setContentView(R.layout.activity01);
         initView();
         initEvents();
     }

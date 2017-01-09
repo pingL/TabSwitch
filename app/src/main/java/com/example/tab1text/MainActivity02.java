@@ -9,13 +9,15 @@ import android.view.View;
 import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 /**
  * Created by pingL on 2017/1/8,下午12:44.
+ *
+ * 使用Fragment 实现Tab切换页
  */
 
-public class MainActivityFragment extends FragmentActivity implements View.OnClickListener {
+public class MainActivity02 extends FragmentActivity implements View.OnClickListener {
+
 
     private ImageButton mTabWechat_btn;
     private ImageButton mTabFriend_btn;
@@ -37,7 +39,7 @@ public class MainActivityFragment extends FragmentActivity implements View.OnCli
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_fragment);
+        setContentView(R.layout.activity02);
         initView();
         initEvent();
         setSelect(0);

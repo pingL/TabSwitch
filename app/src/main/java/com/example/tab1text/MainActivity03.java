@@ -14,12 +14,11 @@ import java.util.List;
 
 /**
  * Created by pingL on 2017/1/9,上午10:09.
+ *
+ * ViewPager 和 FragmentPagerAdapter 实现Tab切换页。
  */
 
-public class MainActivityViewPagerFragmentPagerAdapter extends FragmentActivity implements View.OnClickListener {
-
-
-
+public class MainActivity03 extends FragmentActivity implements View.OnClickListener {
 
     private ViewPager mViewPager;
     private FragmentPagerAdapter mFragmentPagerAdapter;
@@ -38,7 +37,7 @@ public class MainActivityViewPagerFragmentPagerAdapter extends FragmentActivity 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vpg_fgpgapt);
+        setContentView(R.layout.activity03);
 
         initView();
         initEver();
@@ -70,11 +69,7 @@ public class MainActivityViewPagerFragmentPagerAdapter extends FragmentActivity 
         }
     }
 
-
-
     private void initView() {
-
-
 
         mViewPager = (ViewPager) findViewById(R.id.viewpager_1);
         mLlWeChat = (LinearLayout) findViewById(R.id.tab_wechat_ll);
