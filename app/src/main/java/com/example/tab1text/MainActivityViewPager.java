@@ -21,7 +21,7 @@ import java.util.List;
  *
  */
 
-public class MainActivity_ViewPager extends Activity implements View.OnClickListener {
+public class MainActivityViewPager extends Activity implements View.OnClickListener {
 
     private ViewPager mViewPager;
     private PagerAdapter mAdapter;
@@ -49,7 +49,7 @@ public class MainActivity_ViewPager extends Activity implements View.OnClickList
 
     private void initView() {
 
-        mViewPager = (ViewPager) findViewById(R.id.viewpager);
+        mViewPager = (ViewPager) findViewById(R.id.viewpager_0);
 
         mTabWeChat = (LinearLayout) findViewById(R.id.tab_wechat_ll);
         mTabFriend = (LinearLayout) findViewById(R.id.tab_friend_ll);
