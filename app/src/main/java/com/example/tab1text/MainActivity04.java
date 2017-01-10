@@ -9,6 +9,8 @@ import com.viewpagerindicator.TabPageIndicator;
 
 /**
  * Created by pingL on 2017/1/9,下午2:46.
+ *
+ * ViewPage 结合TabPageIndicator 实现Tab页切换
  */
 
 public class MainActivity04 extends FragmentActivity {
@@ -16,8 +18,6 @@ public class MainActivity04 extends FragmentActivity {
     private ViewPager mViewPager;
     private TabAdapter mAdapter;
     private TabPageIndicator mTabPageIndicator;
-
-
 
     @Override
     protected void onCreate( Bundle savedInstanceState) {
