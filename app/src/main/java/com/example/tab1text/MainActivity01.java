@@ -14,26 +14,29 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 
 /**
  * ViewPage 的 Tab 切换页面的实现
  */
 
 public class MainActivity01 extends Activity implements View.OnClickListener {
-
-    private ViewPager mViewPager;
     private PagerAdapter mAdapter;
     private List<View> mViews = new ArrayList<View>();
 
-    private LinearLayout mTabWeChat;
-    private LinearLayout mTabFriend;
-    private LinearLayout mTabAddress;
-    private LinearLayout mTabSetting;
+    @BindView(R.id.viewpager_0) ViewPager mViewPager;
+    @BindView(R.id.tab_wechat_ll) LinearLayout mTabWeChat;
+    @BindView(R.id.tab_friend_ll) LinearLayout mTabFriend;
+    @BindView(R.id.tab_address_ll) LinearLayout mTabAddress;
+    @BindView(R.id.tab_settings_ll) LinearLayout mTabSetting;
 
-    private ImageButton mBtnWeChat;
-    private ImageButton mBtnFriend;
-    private ImageButton mBtnAddress;
-    private ImageButton mBtnSetting;
+    @BindView(R.id.tab_wechat_btn) ImageButton mBtnWeChat;
+    @BindView(R.id.tab_friend_btn) ImageButton mBtnFriend;
+    @BindView(R.id.tab_address_btn) ImageButton mBtnAddress;
+    @BindView(R.id.tab_settings_btn) ImageButton mBtnSetting;
 
 
     @Override
@@ -41,23 +44,12 @@ public class MainActivity01 extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity01);
+        ButterKnife.bind(this);
         initView();
         initEvents();
     }
 
     private void initView() {
-
-        mViewPager = (ViewPager) findViewById(R.id.viewpager_0);
-
-        mTabWeChat = (LinearLayout) findViewById(R.id.tab_wechat_ll);
-        mTabFriend = (LinearLayout) findViewById(R.id.tab_friend_ll);
-        mTabAddress = (LinearLayout) findViewById(R.id.tab_address_ll);
-        mTabSetting = (LinearLayout) findViewById(R.id.tab_settings_ll);
-
-        mBtnWeChat = (ImageButton) findViewById(R.id.tab_wechat_btn);
-        mBtnFriend = (ImageButton) findViewById(R.id.tab_friend_btn);
-        mBtnAddress = (ImageButton) findViewById(R.id.tab_address_btn);
-        mBtnSetting = (ImageButton) findViewById(R.id.tab_settings_btn);
 
         LayoutInflater mInflater = LayoutInflater.from(this);
         View tab01 = mInflater.inflate(R.layout.tab1_main, null);
@@ -104,10 +96,6 @@ public class MainActivity01 extends Activity implements View.OnClickListener {
 
     private void initEvents() {
 
-        mTabWeChat.setOnClickListener(this);
-        mTabFriend.setOnClickListener(this);
-        mTabAddress.setOnClickListener(this);
-        mTabSetting.setOnClickListener(this);
 
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -143,6 +131,7 @@ public class MainActivity01 extends Activity implements View.OnClickListener {
 
     }
 
+    @OnClick({R.id.tab_wechat_ll,R.id.tab_friend_ll,R.id.tab_address_ll,R.id.tab_settings_ll})
     @Override
     public void onClick(View view) {
 
