@@ -12,6 +12,10 @@ import android.widget.LinearLayout;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 /**
  * Created by pingL on 2017/1/9,上午10:09.
  *
@@ -20,27 +24,26 @@ import java.util.List;
 
 public class MainActivity03 extends FragmentActivity implements View.OnClickListener {
 
-    private ViewPager mViewPager;
     private FragmentPagerAdapter mFragmentPagerAdapter;
     private List<Fragment> mFragments;
+    @BindView(R.id.viewpager_1) ViewPager mViewPager;
 
-    private LinearLayout mLlWeChat;
-    private LinearLayout mLlFriend;
-    private LinearLayout mLlAddress;
-    private LinearLayout mLlSetting;
+    @BindView(R.id.tab_wechat_ll) LinearLayout mLlWeChat;
+    @BindView(R.id.tab_friend_ll) LinearLayout mLlFriend;
+    @BindView(R.id.tab_address_ll) LinearLayout mLlAddress;
+    @BindView(R.id.tab_settings_ll) LinearLayout mLlSetting;
 
-    private ImageButton mBtnWeChat;
-    private ImageButton mBtnFriend;
-    private ImageButton mBtnAddress;
-    private ImageButton mBtnSetting;
+    @BindView(R.id.tab_wechat_btn) ImageButton mBtnWeChat;
+    @BindView(R.id.tab_friend_btn) ImageButton mBtnFriend;
+    @BindView(R.id.tab_address_btn) ImageButton mBtnAddress;
+    @BindView(R.id.tab_settings_btn) ImageButton mBtnSetting;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity03);
-
+        ButterKnife.bind(this);
         initView();
-        initEver();
         select(0);
     }
 
@@ -70,16 +73,6 @@ public class MainActivity03 extends FragmentActivity implements View.OnClickList
     }
 
     private void initView() {
-
-        mViewPager = (ViewPager) findViewById(R.id.viewpager_1);
-        mLlWeChat = (LinearLayout) findViewById(R.id.tab_wechat_ll);
-        mLlFriend = (LinearLayout) findViewById(R.id.tab_friend_ll);
-        mLlAddress = (LinearLayout) findViewById(R.id.tab_address_ll);
-        mLlSetting = (LinearLayout) findViewById(R.id.tab_settings_ll);
-        mBtnWeChat = (ImageButton) findViewById(R.id.tab_wechat_btn);
-        mBtnFriend = (ImageButton) findViewById(R.id.tab_friend_btn);
-        mBtnAddress = (ImageButton) findViewById(R.id.tab_address_btn);
-        mBtnSetting = (ImageButton) findViewById(R.id.tab_settings_btn);
 
         mFragments = new ArrayList<Fragment>();
         Fragment tab1 = new FragmentWechat();
@@ -122,20 +115,9 @@ public class MainActivity03 extends FragmentActivity implements View.OnClickList
 
             }
         });
-
-
     }
 
-    private void initEver() {
-
-        mLlWeChat.setOnClickListener(this);
-        mLlFriend.setOnClickListener(this);
-        mLlAddress.setOnClickListener(this);
-        mLlSetting.setOnClickListener(this);
-    }
-
-
-
+    @OnClick({R.id.tab_wechat_ll,R.id.tab_friend_ll,R.id.tab_address_ll,R.id.tab_settings_ll})
     @Override
     public void onClick(View view) {
         switch (view.getId()) {

@@ -32,7 +32,6 @@ public class MainActivity01 extends Activity implements View.OnClickListener {
     @BindView(R.id.tab_friend_ll) LinearLayout mTabFriend;
     @BindView(R.id.tab_address_ll) LinearLayout mTabAddress;
     @BindView(R.id.tab_settings_ll) LinearLayout mTabSetting;
-
     @BindView(R.id.tab_wechat_btn) ImageButton mBtnWeChat;
     @BindView(R.id.tab_friend_btn) ImageButton mBtnFriend;
     @BindView(R.id.tab_address_btn) ImageButton mBtnAddress;
